@@ -16,3 +16,10 @@ mongo = PyMongo(app)
 @app.route("/get_hike_names")
 def get_hike_names():
     return render_template("home.html", hikes=mongo.db.hike_names.find())
+
+# Function to load ABOUT page:
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
