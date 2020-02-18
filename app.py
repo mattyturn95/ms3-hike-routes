@@ -6,6 +6,6 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'kerry_rivers'
+app.config["MONGO_DBNAME"] = 'hike_routes'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', "Env Not loaded")
 mongo = PyMongo(app)
