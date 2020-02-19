@@ -1,5 +1,7 @@
 /* --All container-fluids to have center align-- */
-
+body{
+    background-color: rgb(7, 7, 7);
+}
 .container-fluid {
     text-align: center;
 }
@@ -11,7 +13,7 @@
 }
 
 .bg {
-    background-image: url(../images/cold-fall-falls-2929245.jpg);
+    background-image: url(../images/everest.jpg);
     background-size: cover;
     height: 100%;
     overflow: hidden;
