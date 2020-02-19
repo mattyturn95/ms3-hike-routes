@@ -23,3 +23,10 @@ def get_hike_names():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+# ADD_HIKE page:
+
+
+@app.route("/add_new_hike")
+def add_new_hike():
+    return render_template("add_hike.html")
