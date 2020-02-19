@@ -7,11 +7,9 @@
         <div class="col-12 text-dark">
             <div class="jumbotron">
                 <h1 class="display-4">Welcome</h1>
-                <p class="lead"></p>
-                <hr class="my-4">
-                <p><button
-                        type="button" class="btn btn-primary btn-sm">Blue Button</button> to
-                    edit/update/delete a Hike's Record</p>
+                <p class="lead">Hi there, Welcome to Hike Routes Website. Here you are able to find, review and post great hiking spots for those who are experienced mountaineers and for those of you who are still new to experiencing the great outdoors</p>
+                <hr class="my-4">Join us and feel free to help others!
+                
             </div>
         </div>
     </div>
@@ -31,7 +29,7 @@
                 <tbody>
                     {% for hike in hikes %}
                     <tr>
-                        <td><a class="btn btn-primary btn-sm" href="{{url_for('edit_hike', hike_id=hike._id)}}"
+                        <td><a class="btn btn-warning btn-sm " href="{{url_for('edit_hike', hike_id=hike._id)}}"
                                 role="button">{{hike.hike_name}}</a></td>
                         <td>{{hike.status}}</td>
                         <td>{{hike.mountain_gear_required}}</td>
