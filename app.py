@@ -39,3 +39,10 @@ def insert_hike():
     hike = mongo.db.hike_names
     hike.insert_one(request.form.to_dict())
     return redirect(url_for('get_hike_names'))
+
+# Function to load UPDATE_HIKE page:
+
+@app.route("/edit_hike/<hike_id>")
+def edit_hike(hike_id):
+    the_hike = mongo.db.hike_names.find_one({"_id": ObjectId(hike_id)})
+    return render_template("update_hike.html", hike=the_hike)
