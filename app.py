@@ -30,3 +30,12 @@ def about():
 @app.route("/add_new_hike")
 def add_new_hike():
     return render_template("add_hike.html")
+
+# This function POSTs the input data from the user, to the database:
+
+
+@app.route("/insert_hike", methods=['POST'])
+def insert_hike():
+    hike = mongo.db.hike_names
+    hike.insert_one(request.form.to_dict())
+    return redirect(url_for('get_hike_names'))
