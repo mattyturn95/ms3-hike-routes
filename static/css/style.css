@@ -9,3 +9,22 @@
 .container-fluid_reviews {
     text-align: left;
 }
+
+.bg {
+    background-image: url(../images/cold-fall-falls-2929245.jpg);
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.home-logo-text {
+    font-family: 'Mansalva', cursive, sans-serif;
+}
+
+.navbar-brand {
+    font-size: 18px;
+}
