@@ -1,0 +1,11 @@
+/* --All container-fluids to have center align-- */
+
+.container-fluid {
+    text-align: center;
+}
+
+/* --Review container-fluid to have left align-- */
+
+.container-fluid_reviews {
+    text-align: left;
+}
