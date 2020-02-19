@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <!-- Welcome Landing text -->
+    <div class="row-welcome justify-content-center">
+        <div class="col-12 text-dark">
+            <div class="jumbotron">
+                <h1 class="display-4">Welcome</h1>
+                <p class="lead"></p>
+                <hr class="my-4">
+                <p><button
+                        type="button" class="btn btn-primary btn-sm">Blue Button</button> to
+                    edit/update/delete a Hike's Record</p>
+            </div>
+        </div>
+    </div>
+    <!-- Table of River Data -->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 table-responsive table-data">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Hike Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Mountain Gear required</th>
+                        <th scope="col">For beginners / experienced hikers</th>
+                        <th scope="col">Bird Species</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hike in hikes %}
+                    <tr>
+                        <td><a class="btn btn-primary btn-sm" href="{{url_for('edit_hike', hike_id=hike._id)}}"
+                                role="button">{{hike.hike_name}}</a></td>
+                        <td>{{hike.status}}</td>
+                        <td>{{hike.mountain_gear_required}}</td>
+                        <td>{{hike.easy_or_hard}}</td>
+                        <td>{{hike.birds}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}
