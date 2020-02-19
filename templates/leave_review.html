@@ -5,7 +5,7 @@
     <!-- Welcome Landing text -->
     <div class="row justify-content-center">
         <div class="col-10 text-dark welcome-text">
-            <p><strong>Want to provide feedback <br> on a Hike?<br>Leave your review here.</strong></p>
+            <p><strong>Give our future users a chance to explore and read up on hiking trails that you like<br>Leave us a few words below<br>Thank you !!</strong></p>
         </div>
     </div>
     <div class="row row-form justify-content-center">
@@ -13,8 +13,8 @@
         <div class="col-12 col-md-5">
             <form action="{{url_for('insert_review')}}" method="POST" class="form_font">
                 <div class="form-group font-weight-bolder">
-                    <label for="hike_name">Hike Name: (Must be in database)</label>
-                    <select class="form-control" id="river_name" name="river_name">
+                    <label for="hike_name">Hike Name:</label>
+                    <select class="form-control" id="hike_name" name="hike_name">
                         <option value="" disabled selected>Select Hike</option>
                         {% for hike in hikes %}
                         <option required>{{hike.hike_name}}</option>
@@ -34,7 +34,7 @@
                     <textarea class="form-control" id="review" name="review" rows="5" required></textarea>
                 </div>
                 <!-- Send button -->
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-warning">Hit Here</button>
             </form>
         </div>
     </div>
