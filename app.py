@@ -68,3 +68,17 @@ def delete_hike(hike_id):
     mongo.db.hike_names.remove({'_id': ObjectId(hike_id)})
     return redirect(url_for('get_hike_names'))
     
+
+# Function to load Review a Hike page:
+
+@app.route("/leave_review")
+def leave_review():
+    return render_template("leave_review.html", hikes=mongo.db.hike_names.find())
+
+# Function to insert User review to DB:
+
+@app.route("/insert_review", methods=['POST'])
+def insert_review():
+    review = mongo.db.hike_reviews
+    review.insert_one(request.form.to_dict())
+    return redirect(url_for('read_review'))
