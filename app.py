@@ -60,3 +60,11 @@ def update_hike(hike_id):
         'mountain_gear_required' : request.form.get('mountain_gear_required')
     })
     return redirect(url_for('get_hike_names'))
+
+# delete hike record function:
+
+@app.route("/delete_hike/<hike_id>")
+def delete_hike(hike_id):
+    mongo.db.hike_names.remove({'_id': ObjectId(hike_id)})
+    return redirect(url_for('get_hike_names'))
+    
