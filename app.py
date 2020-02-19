@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'hike_routes'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI', "Env Not loaded")
+app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-tmy51.mongodb.net/hike_routes?retryWrites=true&w=majority'
 mongo = PyMongo(app)
 
 # Function to load HOME page:

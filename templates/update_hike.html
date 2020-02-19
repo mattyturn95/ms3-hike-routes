@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <!-- Welcome Landing text -->
+    <div class="row justify-content-center">
+        <div class="col-10 text-dark welcome-text">
+            <h1><strong>Update Hike's details here:</strong></h1>
+        </div>
+    </div>
+    <div class="row row-form justify-content-center">
+        <div class="col-12 col-md-5">
+            <!-- Form fields here -->
+            <form action="{{url_for('update_hike', hike_id=hike._id) }}" method="POST" class="form_font">
+                <div class="form-group font-weight-bolder">
+                    <label for="hike_name">Hike Name: </label>
+                    <textarea class="form-control" id="hike_name" name="hike_name" rows="1"
+                        required>{{hike.hike_name}}</textarea>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="status">Hike Status</label>
+                    <select class="form-control" id="status" name="status">
+                        <option value="{{hike.status}}" selected>{{hike.status}}</option>
+                        {% if hike.status == "OPEN" %}
+                        <option>CLOSED</option>
+                        {% else %}
+                        <option>OPEN</option>
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="fish">Bird species: </label>
+                    <textarea class="form-control" id="birds" name="birds" rows="2" required>{{hike.birds}}</textarea>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="free_or_permit">Experience required?</label>
+                    <select class="form-control" id="easy_or_hard" name="easy_or_hard">
+                        <option value="{{hike.easy_or_hard}}" selected>{{hike.easy_or_hard}}</option>
+                        {% if hike.easy_or_hard == "Easy Hike" %}
+                        <option>Permit Required</option>
+                        <option>not applicable</option>
+                        {% elif river.free_or_permit == "Experience Required"  %}
+                        <option>Easy Hike</option>
+                        <option>not applicable</option>
+                        {% elif hike.easy_or_hard == "not applicable"  %}
+                        <option>Experience Required</option>
+                        <option>Easy Hike</option>
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="mountain_gear_required">Required mountain Gear: </label>
+                    <textarea class="form-control" id="mountain_gear_required" name="mountain_gear_required" rows="2"
+                        required>{{hike.mountain_gear_required}}</textarea>
+                </div>
+                <!-- Send button -->
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <p class="delete-record-advice"><strong>Or delete this record here:</strong></p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal">
+                Delete Record
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="message_modal"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="message_modal">Message for User</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Are you sure you want to delete this information record?</div>
+                        <div class="modal-footer">
+                            <a href="{{url_for('get_hike_names')}}" type="button" class="btn btn-secondary">No,
+                                take me back!</a>
+                            <a href="{{url_for('delete_hike', hike_id=hike._id) }}" type="button"
+                                class="btn btn-danger">Yes, Delete Record</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
