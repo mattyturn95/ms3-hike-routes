@@ -46,3 +46,17 @@ def insert_hike():
 def edit_hike(hike_id):
     the_hike = mongo.db.hike_names.find_one({"_id": ObjectId(hike_id)})
     return render_template("update_hike.html", hike=the_hike)
+
+# UPDATE_HIKE function - This updates a HIKES info on the db:
+
+@app.route("/update_hike/<hike_id>", methods=["POST"])
+def update_hike(hike_id):
+    river = mongo.db.hike_names
+    river.update({'_id': ObjectId(hike_id)}, {
+        'hike_name' : request.form.get('hike_name'),
+        'status' : request.form.get('status'),
+        'birds' : request.form.get('birds'),
+        'easy_or_hard' : request.form.get('easy_or_hard'),
+        'mountain_gear_required' : request.form.get('mountain_gear_required')
+    })
+    return redirect(url_for('get_hike_names'))
