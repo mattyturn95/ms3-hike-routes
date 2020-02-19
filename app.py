@@ -82,3 +82,13 @@ def insert_review():
     review = mongo.db.hike_reviews
     review.insert_one(request.form.to_dict())
     return redirect(url_for('read_review'))
+
+# Function to load READ REVIEWS page:
+
+@app.route("/read_review")
+def read_review():
+    return render_template("read_review.html", reviews=mongo.db.river_reviews.find())
+
+
+if __name__ == '__main__':
+    app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=False)
