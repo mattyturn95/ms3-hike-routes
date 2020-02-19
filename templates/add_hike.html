@@ -6,3 +6,43 @@
             <p><strong>Add a new Hike's details here.</strong></p>
         </div>
     </div>
+    <div class="row row-form justify-content-center">
+        <div class="col-12 col-md-5">
+            <!-- Form fields here -->
+            <form action="{{url_for('insert_hike')}}" method="POST" class="form_font">
+                <div class="form-group font-weight-bolder">
+                    <label for="hike_name">Hike Name: </label>
+                    <textarea class="form-control" id="hike_name" name="hike_name" rows="1" required></textarea>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="status">Hike Status</label>
+                    <select class="form-control" id="status" name="status">
+                        <option value="" disabled selected>Select Status</option>
+                        <option>OPEN FOR SUMMER</option>
+                        <option>CLOSED FOR WINTER</option>
+                    </select>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="birds">Bird species: </label>
+                    <textarea class="form-control" id="birds" name="birds" rows="2" required></textarea>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="easy_or_hard">Trail is too hard for beginners</label>
+                    <select class="form-control" id="easy_or_hard" name="easy_or_hard">
+                        <option value="" disabled selected>Select Option</option>
+                        <option>Guide is not needed</option>
+                        <option>Guide is needed</option>
+                        <option>not applicable</option>
+                    </select>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="mountain_gear_required">Reccomended climbing gear: </label>
+                    <textarea class="form-control" id="mountain_gear_required" name="mountain_gear_required" rows="2"
+                        required></textarea>
+                </div>
+                <!-- Send button -->
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
