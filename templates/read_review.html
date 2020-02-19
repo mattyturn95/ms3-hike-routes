@@ -5,7 +5,7 @@
     <!-- Welcome Landing text -->
     <div class="row justify-content-center">
         <div class="col-10 text-dark welcome-text">
-            <p><strong>Want to provide feedback <br> on a Hike?<br>Leave your review here.</strong></p>
+            <p><strong>Want to help provide useful information for future hikers <br> On a hike?<br>Leave your review here.</strong></p>
         </div>
     </div>
     <div class="row row-form justify-content-center">
@@ -14,8 +14,8 @@
             <form action="{{url_for('insert_review')}}" method="POST" class="form_font">
                 <div class="form-group font-weight-bolder">
                     <label for="hike_name">Hike Name: (Must be in database)</label>
-                    <select class="form-control" id="river_name" name="river_name">
-                        <option value="" disabled selected>Select Hike</option>
+                    <select class="form-control" id="hike_name" name="hike_name">
+                        <option value="" disabled selected>Select Hikes</option>
                         {% for hike in hikes %}
                         <option required>{{hike.hike_name}}</option>
                         {% endfor %}

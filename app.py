@@ -85,7 +85,9 @@ def insert_review():
 
 # Function to load READ REVIEWS page:
 
-
+@app.route("/read_review")
+def read_review():
+    return render_template("read_review.html", reviews=mongo.db.hike_reviews.find())
 
 
 if __name__ == '__main__':
