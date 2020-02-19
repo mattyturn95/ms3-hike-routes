@@ -21,8 +21,9 @@
     z-index: -1;
 }
 
-.home-logo-text {
+.creative-font-text {
     font-family: 'Tomorrow', sans-serif;
+    font-weight: 400;
 }
 
 .navbar-brand {
@@ -34,6 +35,7 @@
     position: relative;
     margin-top: 50px;
     font-family: 'Tomorrow', sans-serif;
+    font-weight: 400;
 }
 
 .welcome-text p {
@@ -42,6 +44,7 @@
 
 .button-text {
     font-family: 'Tomorrow', sans-serif;
+    font-weight: 400;
 }
 
 .row-form {
@@ -55,6 +58,7 @@
 .form_font {
     font-family: 'Tomorrow', sans-serif;
     font-size: 15px;
+    font-weight: 400;
 }
 
 .jumbotron {
@@ -79,12 +83,13 @@
 
 .row-review {
     margin-top: 25px;
-    background-color: rgba(245, 246, 250, 1.0);
+    background-color: rgb(36, 36, 37);
 }
 
 .row-welcome {
     margin-top: 20px;
-    background-color: rgba(245, 246, 250, 1.0);
+    margin-bottom: 60px;
+    
 }
 
 .table {
