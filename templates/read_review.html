@@ -1,43 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container-fluid">
-    <!-- Welcome Landing text -->
-    <div class="row justify-content-center">
-        <div class="col-10 text-dark welcome-text">
-            <p><strong>Want to help provide useful information for future hikers <br> On a hike?<br>Leave your review here.</strong></p>
+<div class="container-fluid_reviews">
+    <!–– Welcome Landing text -->
+        <div class="row">
+            <div class="col-10 text-dark welcome-text">
+                <p><strong>Here is a list of reviews left behind for your benefit:</strong></p>
+            </div>
         </div>
-    </div>
-    <div class="row row-form justify-content-center">
-        <!-- Review Form -->
-        <div class="col-12 col-md-5">
-            <form action="{{url_for('insert_review')}}" method="POST" class="form_font">
-                <div class="form-group font-weight-bolder">
-                    <label for="hike_name">Hike Name: (Must be in database)</label>
-                    <select class="form-control" id="hike_name" name="hike_name">
-                        <option value="" disabled selected>Select Hikes</option>
-                        {% for hike in hikes %}
-                        <option required>{{hike.hike_name}}</option>
-                        {% endfor %}
-                    </select>
+        <!–– Hike Reviews -->
+            {% for review in reviews %}
+            <div class="row-review justify-content-center">
+                <div class="col-8 text-light">
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img src="{{ url_for('static', filename='images/user.png') }}" class="mr-3" alt="User">
+                            <div class="media-body">
+                                <h6 class="mt-0 mb-1">Hike Name: {{review.hike_name}}</h5>
+                                    <span>Date of Review: {{review.date_of_review}} </span>
+                                    <p>Reviewed By: {{review.review_by}} </p>
+                                    <p>{{review.review}}</p>
+                            </div>
+                        </li>
                 </div>
-                <div class="form-group font-weight-bolder">
-                    <label for="date_of_review">Date of Review: </label>
-                    <input type="date" class="form-control" id="date_of_review" name="date_of_review" rows="1" required>
-                </div>
-                <div class="form-group font-weight-bolder">
-                    <label for="review_by">Name of Reviewer: </label>
-                    <textarea class="form-control" id="review_by" name="review_by" rows="1" required></textarea>
-                </div>
-                <div class="form-group font-weight-bolder">
-                    <label for="review">User Review: </label>
-                    <textarea class="form-control" id="review" name="review" rows="5" required></textarea>
-                </div>
-                <!-- Send button -->
-                <button type="submit" class="btn btn-success">Submit</button>
-            </form>
-        </div>
-    </div>
+            </div>
+            {% endfor %}
 </div>
 
 {% endblock %}
