@@ -74,3 +74,24 @@
         padding-left: 1px;
     }
 }
+
+/* --Easier read-ability, rows given white background-- */
+
+.row-review {
+    margin-top: 25px;
+    background-color: rgba(245, 246, 250, 1.0);
+}
+
+.row-welcome {
+    margin-top: 20px;
+    background-color: rgba(245, 246, 250, 1.0);
+}
+
+.table {
+    background-color: rgba(245, 246, 250, 1.0);
+}
+
+.template-col {
+    padding-right: 2px;
+    padding-left: 2px;
+}
