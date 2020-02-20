@@ -54,3 +54,79 @@ I have made use of one particular font so that it creates a sense of minimalism 
 * Google Fonts 
 * Materialize
 
+## Testing
+
+### User Testing
+
+#### Below are the list of Internet Browsers that were used to test the display of the website:
+
+1. Google Chrome    
+2. Mozilla Firefox
+3. Microsoft Edge
+4. Internet Explorer
+
+## Deployment
+
+### Local Deployment
+
+This project was developed using the Visual Studio Code IDE.
+
+My Repository is here: https://github.com/mattyturn95/ms3-hike-routes
+The Site is live here: https://hike-routes-ms3-code-institute.herokuapp.com/
+
+To deploy this project on your own IDE, folow the steps below:
+
+ Firstly, ensure of the following:
+    - You have an IDE, such as VS Code
+    - The following must be installed locally on your computer:
+            - git
+            - PIP
+            - Python 3
+            - Flask
+            - A MongoDB Atlas account
+1.  Make your own folder and navigate to it on the terminal. Then enter the following in the terminal:
+
+```
+https://github.com/mattyturn95/ms3-hike-routes.git
+$ pip install --upgrade pip
+$ pip install -r requirements.txt
+```
+2.  To run the app locally:
+
+```
+$ python -m flask run
+```
+
+### Heroku Deployment
+
+To Deploy using Heroku Git, use git in the command line:
+
+1. log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+```
+$ heroku login
+```
+
+2.  Clone the repository. Use Git to clone the projects source code to your local machine.
+
+```
+$ heroku git:clone -a hike-routes-ms3-code-institute
+
+$ cd hike-routes-ms3-code-institute 
+```
+3.  create your requirements.txt file
+
+```
+$ pip freeze --local > requirements.txt
+
+```
+4.  create your procfile file
+
+```
+$ echo web: python app.py > Procfile
+
+```
+
+5.  Deploy your changes. Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+
