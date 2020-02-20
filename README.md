@@ -127,6 +127,34 @@ $ echo web: python app.py > Procfile
 
 ```
 
-5.  Deploy your changes. Make some changes to the code you just cloned and deploy them to Heroku using Git.
+5.  Deploy your changes.
+
+```
+$ git add .
+$ git commit -am "commit message"
+$ git push heroku master
+```
+6.  In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7.  Set the following config vars:
+
+```
+IP : 0.0.0.0
+PORT: 5000
+MONGO_URI: mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+
+8. In the heroku dashboard, click on the button "Open App".
+
+The app should open in a new tab.
+
+### Media
+- The background image was sourced from https://unsplash.com
+
+### Acknowledgements
+
+- I'd like to thank my mentor Anthony Ngene.
+
+
+
 
 
