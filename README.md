@@ -38,3 +38,19 @@ I have made use of one particular font so that it creates a sense of minimalism 
 
 * This project uses Python, HTML, CSS and Javascript programming languages. 
 
+### Tools used
+
+* Visual Studio Code  
+* PIP for installation of tools needed in this project.
+* Github to update commits into repositiry
+* Git to handle version control.
+* MongoDb
+* Mongodb Atlas
+
+### Other technologies / libraries used:
+* PyMongo 
+* Bootstrap 4.3.1 
+* Fontawesome 
+* Google Fonts 
+* Materialize
+
