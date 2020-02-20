@@ -146,13 +146,16 @@ MONGO_URI: mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/
 8. In the heroku dashboard, click on the button "Open App".
 
 The app should open in a new tab.
+```
 
 ### Media
 - The background image was sourced from https://unsplash.com
 
-### Acknowledgements
+### Content
 
-- I'd like to thank my mentor Anthony Ngene.
+All content was written by myself
+
+
 
 
 
